@@ -15,5 +15,5 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copia o código do aplicativo para o contêiner
 COPY . .
 
-# Define o comando para executar o aplicativo usando Gunicorn
-CMD ["gunicorn", "-b", "0.0.0.0:8000", "app:app"]
+# Define o comando para executar o aplicativo usando Gunicorn com reload automático
+CMD ["gunicorn", "--reload", "-b", "0.0.0.0:8000", "app:app"]
